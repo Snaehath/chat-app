@@ -82,7 +82,7 @@ io.on('connection',socket =>{
         if(user){
             io.to(user.room).emit('message',buildMsg(ADMIN, "user left room"))
             io.to(user.room).emit('userList',{
-                user: getUserInRoom(user.room)
+                users: getUserInRoom(user.room)
             })
             io.emit('roomList',{
                 rooms: getAllActiveRoom()
